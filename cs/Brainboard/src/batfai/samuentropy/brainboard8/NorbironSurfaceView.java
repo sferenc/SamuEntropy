@@ -55,6 +55,7 @@ class Nodes {
 
         this.surfaceView = surfaceView;
 
+
         int resId = surfaceView.getResources().getIdentifier("pcb550i", "drawable",
                 "batfai.samuentropy.brainboard8");
 
@@ -76,7 +77,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 84, 98, false);
 
-        neuronBox[0] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 1, nandIronProcCover, 0 + 30 + 35, 0 + 30 + 15 + 7);
+        neuronBox[0] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 1, nandIronProcCover, this.surfaceView.getTop()+ 30 + 35, this.surfaceView.getLeft() + 30 + 15 + 7,0);
         neuronBox[0].setType(-1);
 
         resId = surfaceView.getResources().getIdentifier("boxinproci", "drawable",
@@ -84,7 +85,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 84, 98, false);
 
-        neuronBox[1] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 1, nandIronProcCover, 0 + 30 + 35 + 84 + 30 + 35, 0 + 30 + 15 + 7);
+        neuronBox[1] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 1, nandIronProcCover, 0 + 30 + 35 + 84 + 30 + 35, 0 + 30 + 15 + 7,0);
         neuronBox[1].setType(0);
 
         resId = R.drawable.randnmproci;
@@ -93,35 +94,35 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[2] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100);
+        neuronBox[2] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100,0);
 
         resId = R.drawable.gaussnmproci;
         NorbironSurfaceView.getNodeIds().add(resId);
 
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
-        neuronBox[3] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100);
+        neuronBox[3] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100,1);
 
         resId = R.drawable.zeronmproci;
         NorbironSurfaceView.getNodeIds().add(resId);
 
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
-        neuronBox[4] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100);
+        neuronBox[4] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100,2);
 
         resId = R.drawable.unifnmproci;
         NorbironSurfaceView.getNodeIds().add(resId);
 
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
-        neuronBox[5] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100);
+        neuronBox[5] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100,3);
 
         resId = R.drawable.addproci;
         NorbironSurfaceView.getNodeIds().add(resId);
 
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
-        neuronBox[6] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100);
+        neuronBox[6] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100,4);
 
         resId = R.drawable.mulproci;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -129,7 +130,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[7] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100);
+        neuronBox[7] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, nandIronProcCover, 100, 100,5);
 
         resId = R.drawable.nandironproci;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -137,7 +138,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[8] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 25, nandIronProcCover, 100, 100);
+        neuronBox[8] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 25, nandIronProcCover, 100, 100,6);
 
         resId = R.drawable.nandironproci2;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -145,7 +146,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[9] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 50, nandIronProcCover, 350, 100);
+        neuronBox[9] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 50, nandIronProcCover, 350, 100,7);
 
         resId = R.drawable.matyironproci;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -153,7 +154,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[10] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 25, nandIronProcCover, 600, 100);
+        neuronBox[10] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 25, nandIronProcCover, 600, 100,8);
 
         resId = R.drawable.matyironproci2;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -161,7 +162,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[11] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 50, nandIronProcCover, 100, 400);
+        neuronBox[11] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 50, nandIronProcCover, 100, 400,9);
 
         resId = R.drawable.gretironproci;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -169,7 +170,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[12] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 25, nandIronProcCover, 350, 400);
+        neuronBox[12] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 25, nandIronProcCover, 350, 400,10);
 
         resId = R.drawable.gretironproci2;
         NorbironSurfaceView.getNodeIds().add(resId);
@@ -177,7 +178,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[13] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 50, nandIronProcCover, 600, 400);
+        neuronBox[13] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 50, nandIronProcCover, 600, 400,11);
 
         resId = R.drawable.boxproci;
         //NorbironSurfaceView.getNodeIds().add(resId);
@@ -185,7 +186,7 @@ class Nodes {
         nandIronProcCover = android.graphics.BitmapFactory.decodeResource(surfaceView.getResources(), resId);
         nandIronProcCover = android.graphics.Bitmap.createScaledBitmap(nandIronProcCover, 168, 197, false);
 
-        neuronBox[14] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 15, nandIronProcCover, 600, 400);
+        neuronBox[14] = new NeuronBox(neuronSprite, 2 * 14, 64, 62, 15, nandIronProcCover, 600, 400, 12);
 
     }
 
@@ -229,8 +230,8 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
     protected float boardy = 0;
 
     private Nodes nodes;
-    private static java.util.List<NeuronBox> nodeBoxes = new java.util.ArrayList<NeuronBox>();
-
+    public static java.util.List<NeuronBox> nodeBoxes = new java.util.ArrayList<NeuronBox>();
+    private NeuronBox buildNode;
     private static java.util.List<Integer> nodeIds = new java.util.ArrayList<Integer>();
 
     protected NeuronBox selNb = null;
@@ -242,7 +243,12 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
     private boolean running = true;
 
     private android.content.Context context;
-
+    public int getT(){
+        return this.getTop();
+    }
+    public  int getL(){
+        return this.getLeft();
+    }
     public static List<Integer> getNodeIds() {
         return nodeIds;
     }
@@ -263,7 +269,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
     }
 
     public NorbironSurfaceView(android.content.Context context,
-            android.util.AttributeSet attrs) {
+                               android.util.AttributeSet attrs) {
         super(context, attrs);
 
         cinit(context);
@@ -271,7 +277,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
     }
 
     public NorbironSurfaceView(android.content.Context context,
-            android.util.AttributeSet attrs, int defStyle) {
+                               android.util.AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         cinit(context);
@@ -295,7 +301,11 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
         if (nodeBoxes.size() == 0) {
             nodeBoxes.add((NeuronBox) nodes.get(-1).clone());
-            nodeBoxes.add((NeuronBox) nodes.get(-2).clone());
+            // nodeBoxes.add((NeuronBox) nodes.get(-2).clone());
+            for(int i = 1; i <= (NeuronGameActivity.myDB.numRows()); ++i) {
+                nodeBoxes.add((NeuronBox) nodes.get(NeuronGameActivity.myDB.getNodeID(i)).clone());
+                nodeBoxes.get(i).setXY(NeuronGameActivity.myDB.getX(i), NeuronGameActivity.myDB.getY(i));
+            }
         }
     }
 
@@ -315,9 +325,11 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
             if (i > 12) {
                 i = 12;
             }
+
             nodeBoxes.add((NeuronBox) nodes.get(i).clone());
 
         }
+        buildNode = (NeuronBox) nodes.get(-1).clone();
 
         surfaceHolder = getHolder();
         surfaceHolder.addCallback(new SurfaceEvents(this));
@@ -342,10 +354,14 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
                 }
             }
 
-            for (NeuronBox nb : nodeBoxes) {
-                nb.draw(-startsx, -startsy, canvas);
-            }
+            synchronized (nodeBoxes) {
+                for (NeuronBox nb : nodeBoxes) {
+                    if (nb.getType() != -1)
+                        nb.draw(-startsx, -startsy, canvas);
+                    buildNode.draw(0, 0, canvas);
 
+                }
+            }
             canvas.restore();
         }
     }
@@ -378,11 +394,16 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
         NeuronBox r = null;
         float max = 10000, m;
 
-        for (NeuronBox nb : nodeBoxes) {
-
-            if ((m = d(nb.getX() + nb.getWidth() / 2, nb.getY() + nb.getHeight() / 2, x, y)) < max) {
-                max = m;
-                r = nb;
+        synchronized (nodeBoxes) {
+            for (NeuronBox nb : nodeBoxes) {
+                if ((m = d(nb.getX() + nb.getWidth() / 2, nb.getY() + nb.getHeight() / 2, x, y)) < max) {
+                    max = m;
+                    r = nb;
+                }
+                if ((m = d(buildNode.getX() + buildNode.getWidth() / 2, buildNode.getY() + buildNode.getHeight() / 2, x - startsx, y - startsy)) < max) {
+                    max = m;
+                    r = buildNode;
+                }
             }
         }
         return r;
@@ -423,6 +444,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
                 if (nb.getType() == -1) {
                     // if (nb.getSelected()) {
+                    nb.setXY(this.getTop(),this.getLeft());
                     newNode();
                     // }
                 } else if (nb.getType() == 0) {
@@ -496,10 +518,12 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
             if ((newnow = System.currentTimeMillis()) - now > 100) {
 
-                for (NeuronBox nb : nodeBoxes) {
-                    nb.step();
+                synchronized (nodeBoxes) {
+                    for (NeuronBox nb : nodeBoxes) {
+                        nb.step();
+                    }
                 }
-
+                buildNode.step();
                 repaint();
 
                 now = newnow;
