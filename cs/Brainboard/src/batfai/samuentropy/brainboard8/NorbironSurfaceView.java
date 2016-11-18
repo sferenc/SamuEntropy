@@ -55,7 +55,6 @@ class Nodes {
 
         this.surfaceView = surfaceView;
 
-
         int resId = surfaceView.getResources().getIdentifier("pcb550i", "drawable",
                 "batfai.samuentropy.brainboard8");
 
@@ -202,7 +201,7 @@ class Nodes {
         }
 
     }
-
+//megadja a méretet
     public int getSize() {
         return neuronBox.length;
     }
@@ -388,7 +387,6 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
         return (x1 - y1) * (x1 - y1) + (x2 - y2) * (x2 - y2);
     }
-
     protected NeuronBox nearestNeuronBox(float x, float y) {
 
         NeuronBox r = null;
