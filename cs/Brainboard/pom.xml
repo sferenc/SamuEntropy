@@ -93,9 +93,6 @@
                 <artifactId>android-maven-plugin</artifactId> 
                 <version>4.4.3</version> 
                 <configuration> 
-                    <sdk>
-                        <platform>16</platform>
-                    </sdk>
                     <deleteConflictingFiles>true</deleteConflictingFiles> 
                     <undeployBeforeDeploy>true</undeployBeforeDeploy> 
                     <androidManifestFile>AndroidManifest.xml</androidManifestFile>

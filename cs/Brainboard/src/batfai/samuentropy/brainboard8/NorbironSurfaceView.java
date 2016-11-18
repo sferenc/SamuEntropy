@@ -40,6 +40,10 @@
 package batfai.samuentropy.brainboard8;
 
 import java.util.List;
+import android.widget.Toast;
+import android.util.*;
+import android.app.*;
+import android.content.*;
 
 class Nodes {
 
@@ -229,7 +233,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
     protected float boardy = 0;
 
     private Nodes nodes;
-    public static java.util.List<NeuronBox> nodeBoxes = new java.util.ArrayList<NeuronBox>();
+    public java.util.List<NeuronBox> nodeBoxes = new java.util.ArrayList<NeuronBox>();
     private NeuronBox buildNode;
     private static java.util.List<Integer> nodeIds = new java.util.ArrayList<Integer>();
 
@@ -315,19 +319,6 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
         initBoxNodes();
 
-        android.content.Intent intent = ((NeuronGameActivity) context).getIntent();
-        android.os.Bundle bundle = intent.getExtras();
-
-        if (bundle != null) {
-            int i = bundle.getInt("selectedNode");
-
-            if (i > 12) {
-                i = 12;
-            }
-
-            nodeBoxes.add((NeuronBox) nodes.get(i).clone());
-
-        }
         buildNode = (NeuronBox) nodes.get(-1).clone();
 
         surfaceHolder = getHolder();
@@ -335,6 +326,26 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
         scaleGestureDetector = new android.view.ScaleGestureDetector(context, new ScaleAdapter(this));
 
+    }
+
+    public void addNeuronBoxForId(int id) {
+      Log.d("NorbironSurfaceView", "new " + id);
+      if (id > 12) {
+          id = 12;
+      }
+
+      nodeBoxes.add((NeuronBox) nodes.get(id).clone());
+    }
+
+    private Activity getActivity() {
+        Context context = getContext();
+        while (context instanceof ContextWrapper) {
+            if (context instanceof Activity) {
+                return (Activity)context;
+            }
+            context = ((ContextWrapper)context).getBaseContext();
+        }
+        return null;
     }
 
     @Override
@@ -411,7 +422,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
         android.content.Intent intent = new android.content.Intent(context, NodeActivity.class);
         intent.putIntegerArrayListExtra("nodeIds", (java.util.ArrayList<Integer>) nodeIds);
-        context.startActivity(intent);
+        getActivity().startActivityForResult(intent, 0);
 
     }
 

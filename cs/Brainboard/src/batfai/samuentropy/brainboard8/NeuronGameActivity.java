@@ -51,6 +51,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
+import android.content.*;
 
 import java.util.ArrayList;
 
@@ -164,13 +165,14 @@ class Databs extends SQLiteOpenHelper {
 public class NeuronGameActivity extends android.app.Activity {
 
     public static Databs myDB;
+    private NorbironSurfaceView nsv;
 
     @Override
     public void onCreate(android.os.Bundle savedInstanceState) {
         this.myDB = new Databs(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
+        nsv = (NorbironSurfaceView) findViewById(R.id.nsv);
     }
 
     @Override
@@ -180,17 +182,29 @@ public class NeuronGameActivity extends android.app.Activity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onPause() {
+        super.onPause();
         Toast.makeText(NeuronGameActivity.this, "on pause", Toast.LENGTH_SHORT).show();
 
-        for(int i = 1; i < NorbironSurfaceView.nodeBoxes.size(); ++i){
+        for(int i = 1; i < nsv.nodeBoxes.size(); ++i){
 
-            int x = NorbironSurfaceView.nodeBoxes.get(i).getX();
-            int y = NorbironSurfaceView.nodeBoxes.get(i).getY();
-            int nodeID = NorbironSurfaceView.nodeBoxes.get(i).BUZIID;
+            int x = nsv.nodeBoxes.get(i).getX();
+            int y = nsv.nodeBoxes.get(i).getY();
+            int nodeID = nsv.nodeBoxes.get(i).BUZIID;
 
             myDB.insertALL(i,x,y,nodeID);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+      // Check which request we're responding to
+      if (requestCode == 0) {
+        // Make sure the request was successful
+        if (resultCode == RESULT_OK) {
+          int id = data.getExtras().getInt("selectedNode", 0);
+          nsv.addNeuronBoxForId(id);
+        }
+      }
     }
 }
